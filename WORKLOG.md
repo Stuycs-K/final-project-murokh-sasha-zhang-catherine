@@ -1,10 +1,11 @@
 # Work Log
 
-## GROUP MEMBER 1
+## Sasha Murokh
 
-### date x
+### 5/22/24
 
-info
+-worked together on exact dimensions/layout of background
+-general planning for sizing etc
 
 ### date y
 
