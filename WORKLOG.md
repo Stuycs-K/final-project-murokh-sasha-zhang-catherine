@@ -11,11 +11,11 @@ info
 info
 
 
-## GROUP MEMBER 2
+## GROUP MEMBER 2: Catherine
 
-### date x
+### 5/22/24
 
-info
+created the ibis file
 
 ### date y
 
