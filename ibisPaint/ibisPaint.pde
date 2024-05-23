@@ -1,8 +1,35 @@
+int layerSelected;
+Layer layer1, layer2, layer3;
+
 void setup(){
+  layerSelected = 1;
+  layer1 = new Layer();
+  layer2 = new Layer();
+  layer3 = new Layer();
   size(1400,800);
+  drawBackground();
+  drawColourSwatches();
+  
+  PImage icon = loadImage("brush_temp.png");
+  image(icon,60,685);
+}
+
+void mouseClicked() {
+  
+}
+
+void draw(){
+  
+}
+
+void drawBackground(){
   rect(50,50,1100,600);
   rect(1200,50,150,600);
+  fill(99, 99, 99);
   rect(50,675,1300,100);
+}
+
+void drawColourSwatches(){
   fill(255, 0, 0);
   rect(1220,70,45,38);
   fill(255, 141, 0);
@@ -25,7 +52,4 @@ void setup(){
   rect(1220,592,45,38);
   fill(0);
   rect(1285,70,45,38);
-}
-void draw(){
-  
 }
