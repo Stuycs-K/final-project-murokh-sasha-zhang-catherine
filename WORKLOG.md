@@ -4,12 +4,14 @@
 
 ### 5/22/24
 
--worked together on exact dimensions/layout of background
--general planning for sizing etc
+-worked together on exact dimensions/layout of background <br />
+-general planning for sizing etc <br />
 
-### date y
+### 5/23/24
 
-info
+-created a temporary brush icon <br />
+-worked on creating classes with variables <br />
+-modified setup <br />
 
 
 ## GROUP MEMBER 2: Catherine
