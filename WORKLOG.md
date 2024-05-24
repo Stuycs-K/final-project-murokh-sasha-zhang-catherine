@@ -13,6 +13,12 @@
 -worked on creating classes with variables <br />
 -modified setup <br />
 
+### 5/24/24
+
+-worked on creating classes with variables <br />
+-modified setup,layer,brush <br />
+-currently not updating pixels <br />
+
 
 ## GROUP MEMBER 2: Catherine
 
