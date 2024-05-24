@@ -23,3 +23,7 @@ created the ibis file
 ### 5/22/24
 
 added all the color to the color pop-out
+
+### 5/24/24
+
+added the rest of the tool icons
