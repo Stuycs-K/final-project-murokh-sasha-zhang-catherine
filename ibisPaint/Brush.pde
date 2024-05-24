@@ -3,7 +3,7 @@ public class Brush{
   public Brush(color initialColour){
     colour = initialColour;
   }
-  void stroke() {
-    
+  public void stroke() {
+     set(mouseX,mouseY,colour);
   }
 }

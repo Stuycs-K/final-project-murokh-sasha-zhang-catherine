@@ -1,7 +1,9 @@
 int layerSelected;
 Layer layer1, layer2, layer3;
+int toolSelected;
 
 void setup(){
+  toolSelected = 1;
   layerSelected = 1;
   layer1 = new Layer();
   layer2 = new Layer();
@@ -15,7 +17,20 @@ void setup(){
 }
 
 void mouseClicked() {
-  
+  if (mouseX>50 && mouseX <1150 && mouseY>50 && mouseY<650){
+    if (layerSelected==1){
+      layer1.paint(toolSelected);
+    }
+    if (layerSelected==2){
+      layer2.paint(toolSelected);
+    }
+    if (layerSelected==3){
+      layer3.paint(toolSelected);
+    }
+  }
+  if (mouseX>50 && mouseX <1350 && mouseY>675 && mouseY<775){
+    //tools
+  }
 }
 
 void draw(){
