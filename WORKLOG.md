@@ -33,3 +33,7 @@ added all the color to the color pop-out
 ### 5/24/24
 
 added the rest of the tool icons
+
+### 5/25/24
+
+added the tool selection if statements

@@ -1,6 +1,11 @@
 int layerSelected;
 Layer layer1, layer2, layer3;
 int toolSelected;
+static int BRUSH = 0;
+static int ERASER = 1;
+static int SHAPE1 = 2;
+static int FILTER = 3;
+static int IMAGE1 = 4;
 
 void setup(){
   toolSelected = 1;
@@ -11,9 +16,8 @@ void setup(){
   size(1400,800);
   drawBackground();
   drawColourSwatches();
+  drawToolBar();
   
-  PImage icon = loadImage("brush_temp.png");
-  image(icon,60,685);
 }
 
 void mouseClicked() {
@@ -29,12 +33,27 @@ void mouseClicked() {
     }
   }
   if (mouseX>50 && mouseX <1350 && mouseY>675 && mouseY<775){
-    //tools
+    if(mouseY>685){
+      if(mouseX>60 && mouseX<140){
+        toolSelected = BRUSH;
+      }
+      if(mouseX>140 && mouseX<220){
+        toolSelected = ERASER;
+      }
+      if(mouseX>220 && mouseX<300){
+        toolSelected = SHAPE1;
+      }
+      if(mouseX>300 && mouseX<380){
+        toolSelected = FILTER;
+      }
+      if(mouseX>380){
+        toolSelected = IMAGE1;
+      }
+    }
   }
 }
 
 void draw(){
-  
 }
 
 void drawBackground(){
@@ -67,4 +86,17 @@ void drawColourSwatches(){
   rect(1220,592,45,38);
   fill(0);
   rect(1285,70,45,38);
+}
+
+void drawToolBar(){
+  PImage icon = loadImage("brush_temp.png");
+  image(icon,60,685);
+  PImage icon1 = loadImage("eraser.png");
+  image(icon1,140,685);
+  PImage icon2 = loadImage("shape.png");
+  image(icon2,220,685);
+  PImage icon3 = loadImage("image.png");
+  image(icon3,300,685);
+  PImage icon4 = loadImage("filter.png");
+  image(icon4,380,685);
 }
