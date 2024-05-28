@@ -1,7 +1,6 @@
-public class Brush{
-  color colour;
-  public Brush(color initialColour){
-    colour = initialColour;
+public class Erase{
+  color colour = color(255,255,255);
+  public Erase(){
   }
   public void stroke() {
     loadPixels();

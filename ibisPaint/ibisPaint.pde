@@ -53,7 +53,22 @@ void mouseClicked() {
   }
 }
 
+void mouseDragged(){
+  if (mouseX>50 && mouseX <1150 && mouseY>50 && mouseY<650){
+    if (layerSelected==1){
+      layer1.dragged(toolSelected);
+    }
+    if (layerSelected==2){
+      layer2.dragged(toolSelected);
+    }
+    if (layerSelected==3){
+      layer3.dragged(toolSelected);
+    }
+  }
+}
+
 void draw(){
+  
 }
 
 void drawBackground(){
