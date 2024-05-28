@@ -19,6 +19,14 @@
 -modified setup,layer,brush <br />
 -currently not updating pixels <br />
 
+### 5/28/24
+
+-fixed brush to work/update pixels/larger thickness together w catherine <br />
+-click vs drag as separate functions to come in handy later <br />
+-erase works same as brush <br />
+-started working on shape<br />
+-to do: connect dots<br />
+
 
 ## GROUP MEMBER 2: Catherine
 
