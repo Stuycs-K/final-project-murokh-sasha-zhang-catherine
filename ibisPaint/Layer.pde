@@ -18,6 +18,10 @@ public class Layer {
       Erase erase = new Erase();
       erase.stroke();
     }
+    if (toolSelected == 2) {
+      Shape shape = new Shape(colour);
+      shape.stroke();
+    }
   }
   public void dragged(int toolSelected) {
     if (toolSelected == 0) {
