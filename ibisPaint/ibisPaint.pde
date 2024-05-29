@@ -51,6 +51,57 @@ void mouseClicked() {
       }
     }
   }
+  if(mouseX>1200 && mouseX < 1350 && mouseY > 50 && mouseY < 650){
+    if(mouseX>1220 && mouseX<1265){
+      if(mouseY>70 && mouseY<108){
+        color c = color(255, 0, 0);
+        layer1.setColor(c);
+      }
+      if(mouseY>128 && mouseY<166){
+        color c = color(255, 141, 0);
+        layer1.setColor(c);
+      }
+      if(mouseY>186 && mouseY<224){
+        color c = color(237, 255, 0);
+        layer1.setColor(c);
+      }
+      if(mouseY>244 && mouseY<282){
+        color c = color(28, 255, 0);
+        layer1.setColor(c);
+      }
+      if(mouseY>302 && mouseY<340){
+        color c = color(0, 255, 210);
+        layer1.setColor(c);
+      }
+      if(mouseY>360 && mouseY<398){
+        color c = color(0, 125, 255);
+        layer1.setColor(c);
+      }
+      if(mouseY>418 && mouseY<456){
+        color c = color(7, 0, 255);
+        layer1.setColor(c);
+      }
+      if(mouseY>476 && mouseY<514){
+        color c = color(156, 0, 255);
+        layer1.setColor(c);
+      }
+      if(mouseY>534 && mouseY<572){
+        color c = color(255, 0, 255);
+        layer1.setColor(c);
+      }
+      if(mouseY>592 && mouseY<630){
+        color c = color(255);
+        layer1.setColor(c);
+      }
+      
+    }
+    if(mouseX<1330 && mouseX>1265){
+      if(mouseY>70 && mouseY<108){
+        color c = color(0);
+        layer1.setColor(c);
+      }
+    }
+  }
 }
 
 void mouseDragged(){
@@ -68,7 +119,15 @@ void mouseDragged(){
 }
 
 void draw(){
-  
+  noStroke();
+  fill(99, 99, 99);
+  rect(50, 0, 50, 50);
+  textSize(15);
+  color c = layer1.getColor();
+  fill(c);
+  text(mouseX, 50, 10);
+  text(mouseY, 50, 35);
+  text("color",50,50);
 }
 
 void drawBackground(){

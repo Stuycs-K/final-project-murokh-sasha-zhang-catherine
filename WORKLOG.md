@@ -45,3 +45,7 @@ added the rest of the tool icons
 ### 5/25/24
 
 added the tool selection if statements
+
+### 5/28/24
+
+added color selections to the brush

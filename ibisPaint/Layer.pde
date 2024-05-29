@@ -3,9 +3,14 @@ public class Layer {
   public Layer(){
     loadPixels();
   }
+  public void setColor(color colour){
+    this.colour = colour;
+  }
+  public color getColor(){
+    return this.colour;
+  }
   public void paint(int toolSelected) {
     if (toolSelected == 0) {
-      colour = color(0);
       Brush brush = new Brush(colour);
       brush.stroke();
     }
@@ -16,7 +21,6 @@ public class Layer {
   }
   public void dragged(int toolSelected) {
     if (toolSelected == 0) {
-      colour = color(0);
       Brush brush = new Brush(colour);
       brush.drag();
     }
