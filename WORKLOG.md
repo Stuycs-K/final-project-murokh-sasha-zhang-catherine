@@ -49,3 +49,7 @@ added the tool selection if statements
 ### 5/28/24
 
 added color selections to the brush
+
+### 5/29/24
+
+adjusted color selector so it works for all layers
