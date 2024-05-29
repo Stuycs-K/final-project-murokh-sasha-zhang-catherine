@@ -3,7 +3,7 @@ public class Brush{
   public Brush(color initialColour){
     colour = initialColour;
   }
-  public void stroke() {
+  public void clicks() {
     loadPixels();
     pixels[(mouseY)*1400+(mouseX)] = colour;
     pixels[(mouseY+1)*1400+(mouseX)] = colour;
