@@ -52,4 +52,5 @@ added color selections to the brush
 
 ### 5/29/24
 
-adjusted color selector so it works for all layers
+adjusted color selector so it works for all layers <br />
+added a clear icon
