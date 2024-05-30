@@ -33,6 +33,10 @@
 ### 5/29/24
 -shape works for clicking start/endpoint<br />
 
+### 5/30/24
+-shape only option is drag because more intuitive for user<br />
+-allow brush/erase thickness modification<br />
+
 
 ## GROUP MEMBER 2: Catherine
 
