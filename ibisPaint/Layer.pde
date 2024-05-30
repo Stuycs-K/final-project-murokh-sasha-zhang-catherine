@@ -1,7 +1,11 @@
 public class Layer {
   color colour;
+  boolean clicked;
+  int startX,startY;
+  
   public Layer(){
     loadPixels();
+    clicked = false;
   }
   public void setColor(color colour){
     this.colour = colour;
@@ -12,15 +16,24 @@ public class Layer {
   public void paint(int toolSelected) {
     if (toolSelected == 0) {
       Brush brush = new Brush(colour);
-      brush.stroke();
+      brush.clicks();
     }
     if (toolSelected == 1) {
       Erase erase = new Erase();
-      erase.stroke();
+      erase.clicks();
     }
     if (toolSelected == 2) {
-      Shape shape = new Shape(colour);
-      shape.stroke();
+      if (clicked) {
+        Shape shape = new Shape(colour,startX,startY);
+        shape.clicks();
+        clicked = !clicked;
+      }
+      else {
+        startX = mouseX;
+        startY = mouseY;
+        clicked = !clicked;
+        ///////POTENTIALLY ADD SOMETHING TO THE MOUSE TO SHOW THAT A LINE IS BEING DRAGGED FROM STARTING POINT
+      }
     }
   }
   public void dragged(int toolSelected) {

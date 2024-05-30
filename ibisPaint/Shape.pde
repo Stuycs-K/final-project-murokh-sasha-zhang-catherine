@@ -4,30 +4,32 @@ public class Shape {
   int STRAIGHT=0;
   int CIRCLE=1;
   int RECTANGLE=2;
-  boolean clicked;
   int startX;
   int startY;
-  public Shape(color initialColour) {
+  public Shape(color initialColour, int x,int y) {
     colour = initialColour;
-    clicked = false;
+    startX=x;
+    startY=y;
+    shapeSelected=STRAIGHT;
   }
   public void popout() {
-    //deal with pixels
-    shapeSelected=0; //temp
+//
   }
-  public void stroke() {
-    loadPixels();
-    if (clicked = true) {
-      ///make a line or whatever based on shapesleected
+  public void clicks() {
+    stroke(colour);
+    if (shapeSelected ==STRAIGHT){
+      line(startX,startY,mouseX,mouseY); 
     }
-    else {
-      clicked = true;
+    if (shapeSelected ==RECTANGLE){
+      rect(startX,startY,mouseX,mouseY); 
     }
-    updatePixels();
+    if (shapeSelected ==CIRCLE){
+      float diameter = (float) Math.sqrt(Math.pow(mouseX-startX,2) + Math.pow(mouseY-startY,2)) *2;
+      ellipse(startX,startY,diameter,diameter); 
+    }
+    
   }
   public void drag() {
-    loadPixels();
-    //yes
-    updatePixels();
+    line(startX,startY,mouseX,mouseY); 
   }
 }

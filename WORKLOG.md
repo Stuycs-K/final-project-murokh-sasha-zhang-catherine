@@ -27,6 +27,12 @@
 -started working on shape<br />
 -to do: connect dots<br />
 
+### 5/28/24 (commits past midnight)
+-started outlining shape<br />
+
+### 5/29/24
+-shape works for clicking start/endpoint<br />
+
 
 ## GROUP MEMBER 2: Catherine
 
