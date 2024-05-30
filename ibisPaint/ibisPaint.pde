@@ -112,6 +112,11 @@ void mouseClicked() {
       }
     }
   }
+  if(mouseX>1280 && mouseY<50){
+    fill(255);
+    stroke(0);
+    rect(50,50,1100,600);
+  }
 }
 
 void mouseDragged(){
@@ -146,6 +151,9 @@ void drawBackground(){
   rect(1200,50,150,600);
   fill(99, 99, 99);
   rect(50,675,1300,100);
+  PImage clear = loadImage("clear.png");
+  clear.resize(80,80);
+  image(clear, 1280, -15);
 }
 
 void drawColourSwatches(){
