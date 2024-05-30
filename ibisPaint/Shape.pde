@@ -21,15 +21,12 @@ public class Shape {
       line(startX,startY,mouseX,mouseY); 
     }
     if (shapeSelected ==RECTANGLE){
-      rect(startX,startY,mouseX,mouseY); 
+      rect(startX,startY,mouseX-startX,mouseY-startY); 
     }
     if (shapeSelected ==CIRCLE){
-      float diameter = (float) Math.sqrt(Math.pow(mouseX-startX,2) + Math.pow(mouseY-startY,2)) *2;
-      ellipse(startX,startY,diameter,diameter); 
+      float radius = (float) Math.sqrt(Math.pow(mouseX-startX,2) + Math.pow(mouseY-startY,2));
+      ellipse(Math.abs((mouseX+startX)/2),Math.abs((mouseY+startY)/2),radius,radius); 
     }
     
-  }
-  public void drag() {
-    line(startX,startY,mouseX,mouseY); 
   }
 }

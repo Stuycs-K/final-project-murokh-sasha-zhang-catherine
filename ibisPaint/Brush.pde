@@ -1,24 +1,26 @@
 public class Brush{
   color colour;
-  public Brush(color initialColour){
+  int thickness;
+  public Brush(color initialColour,int initialThickness){
     colour = initialColour;
+    thickness = initialThickness/2;
   }
   public void clicks() {
     loadPixels();
-    pixels[(mouseY)*1400+(mouseX)] = colour;
-    pixels[(mouseY+1)*1400+(mouseX)] = colour;
-    pixels[(mouseY-1)*1400+(mouseX)] = colour;
-    pixels[(mouseY)*1400+(mouseX+1)] = colour;
-    pixels[(mouseY)*1400+(mouseX-1)] = colour;
+    for (int i=(thickness*-1);i<=thickness;i++){
+      for (int j=(thickness*-1);j<=thickness;j++) {
+        pixels[(mouseY+i)*1400+(mouseX+j)] = colour;
+      }
+    }
     updatePixels();
   }
   public void drag() {
     loadPixels();
-    pixels[(mouseY)*1400+(mouseX)] = colour;
-    pixels[(mouseY+1)*1400+(mouseX)] = colour;
-    pixels[(mouseY-1)*1400+(mouseX)] = colour;
-    pixels[(mouseY)*1400+(mouseX+1)] = colour;
-    pixels[(mouseY)*1400+(mouseX-1)] = colour;
+    for (int i=(thickness*-1);i<=thickness;i++){
+      for (int j=(thickness*-1);j<=thickness;j++) {
+        pixels[(mouseY+i)*1400+(mouseX+j)] = colour;
+      }
+    }
     updatePixels();
   }
 }

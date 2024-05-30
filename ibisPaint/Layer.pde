@@ -1,11 +1,16 @@
 public class Layer {
   color colour;
-  boolean clicked;
+  boolean started;
   int startX,startY;
+  int BRUSH = 0;
+  int ERASER = 1;
+  int SHAPE1 = 2;
+  int FILTER = 3;
+  int IMAGE1 = 4;
   
   public Layer(){
     loadPixels();
-    clicked = false;
+    started = false;
   }
   public void setColor(color colour){
     this.colour = colour;
@@ -14,36 +19,38 @@ public class Layer {
     return this.colour;
   }
   public void paint(int toolSelected) {
-    if (toolSelected == 0) {
-      Brush brush = new Brush(colour);
+    if (toolSelected == BRUSH) {
+      Brush brush = new Brush(colour,5);//
       brush.clicks();
     }
-    if (toolSelected == 1) {
-      Erase erase = new Erase();
+    if (toolSelected == ERASER) {
+      Erase erase = new Erase(5);
       erase.clicks();
     }
-    if (toolSelected == 2) {
-      if (clicked) {
+  }
+  public void dragged(int toolSelected) {
+    if (toolSelected == BRUSH) {
+      Brush brush = new Brush(colour,5);//
+      brush.drag();
+    }
+    if (toolSelected == ERASER) {
+      Erase erase = new Erase(5);
+      erase.drag();
+    }
+  }
+  
+  public void shapeDragger(int toolSelected) {
+    if (toolSelected == SHAPE1) {
+      if (started) {
         Shape shape = new Shape(colour,startX,startY);
         shape.clicks();
-        clicked = !clicked;
+        started = !started;
       }
       else {
         startX = mouseX;
         startY = mouseY;
-        clicked = !clicked;
-        ///////POTENTIALLY ADD SOMETHING TO THE MOUSE TO SHOW THAT A LINE IS BEING DRAGGED FROM STARTING POINT
+        started = !started;
       }
-    }
-  }
-  public void dragged(int toolSelected) {
-    if (toolSelected == 0) {
-      Brush brush = new Brush(colour);
-      brush.drag();
-    }
-    if (toolSelected == 1) {
-      Erase erase = new Erase();
-      erase.drag();
     }
   }
 }

@@ -128,6 +128,34 @@ void mouseDragged(){
   }
 }
 
+void mousePressed(){
+  if (mouseX>50 && mouseX <1150 && mouseY>50 && mouseY<650){
+    if (layerSelected==1){
+      layer1.shapeDragger(toolSelected);
+    }
+    if (layerSelected==2){
+      layer2.shapeDragger(toolSelected);
+    }
+    if (layerSelected==3){
+      layer3.shapeDragger(toolSelected);
+    }
+  }
+}
+
+void mouseReleased(){
+  if (mouseX>50 && mouseX <1150 && mouseY>50 && mouseY<650){
+    if (layerSelected==1){
+      layer1.shapeDragger(toolSelected);
+    }
+    if (layerSelected==2){
+      layer2.shapeDragger(toolSelected);
+    }
+    if (layerSelected==3){
+      layer3.shapeDragger(toolSelected);
+    }
+  }
+}
+
 
 void draw(){
   noStroke();
