@@ -35,7 +35,7 @@
 
 ### 5/30/24
 -shape only option is drag because more intuitive for user<br />
--allow brush/erase thickness modification<br />
+-allow brush/erase/shape thickness modification<br />
 
 
 ## GROUP MEMBER 2: Catherine
