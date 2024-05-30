@@ -4,13 +4,14 @@ public class Shape {
   int STRAIGHT=0;
   int CIRCLE=1;
   int RECTANGLE=2;
-  int startX;
-  int startY;
-  public Shape(color initialColour, int x,int y) {
+  int startX,startY;
+  int thickness;
+  public Shape(color initialColour, int x,int y,int initialThickness) {
     colour = initialColour;
     startX=x;
     startY=y;
     shapeSelected=STRAIGHT;
+    thickness = initialThickness;
   }
   public void popout() {
 //
@@ -18,6 +19,7 @@ public class Shape {
   public void clicks() {
     stroke(colour);
     if (shapeSelected ==STRAIGHT){
+      strokeWeight(thickness);
       line(startX,startY,mouseX,mouseY); 
     }
     if (shapeSelected ==RECTANGLE){
