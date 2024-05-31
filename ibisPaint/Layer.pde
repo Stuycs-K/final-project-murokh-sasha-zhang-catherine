@@ -8,6 +8,7 @@ public class Layer {
   int FILTER = 3;
   int IMAGE1 = 4;
   int thickness;
+  int shapeSelect;
   
   public Layer(){
     loadPixels();
@@ -51,7 +52,7 @@ public class Layer {
   public void shapeDragger(int toolSelected) {
     if (toolSelected == SHAPE1) {
       if (started) {
-        Shape shape = new Shape(colour,startX,startY,thickness);
+        Shape shape = new Shape(colour,startX,startY,thickness,shapeSelect);
         shape.clicks();
         started = !started;
       }
@@ -61,5 +62,9 @@ public class Layer {
         started = !started;
       }
     }
+  }
+  
+  public void setShape(int shapeFr){
+    shapeSelect = shapeFr;
   }
 }

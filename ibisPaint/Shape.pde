@@ -6,11 +6,11 @@ public class Shape {
   int RECTANGLE=2;
   int startX,startY;
   int thickness;
-  public Shape(color initialColour, int x,int y,int initialThickness) {
+  public Shape(color initialColour, int x,int y,int initialThickness,int initialShape) {
     colour = initialColour;
     startX=x;
     startY=y;
-    shapeSelected=STRAIGHT;
+    shapeSelected=initialShape;
     thickness = initialThickness;
   }
   public void popout() {
