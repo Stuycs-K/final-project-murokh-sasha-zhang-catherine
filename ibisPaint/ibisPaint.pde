@@ -6,6 +6,7 @@ static int ERASER = 1;
 static int SHAPE1 = 2;
 static int FILTER = 3;
 static int IMAGE1 = 4;
+static boolean notBroken;
 
 void setup(){
   toolSelected = 1;
@@ -37,18 +38,56 @@ void mouseClicked() {
       if(mouseX>60 && mouseX<140){
         toolSelected = BRUSH;
         drawToolSlider();
+        deleteShapeMenu();
       }
       if(mouseX>140 && mouseX<220){
         toolSelected = ERASER;
+        deleteShapeMenu();
       }
       if(mouseX>220 && mouseX<300){
         toolSelected = SHAPE1;
+        drawShapeMenu();
       }
       if(mouseX>300 && mouseX<380){
         toolSelected = FILTER;
+        deleteShapeMenu();
       }
-      if(mouseX>380){
+      if(mouseX>380 && mouseX<460){
         toolSelected = IMAGE1;
+        deleteShapeMenu();
+      }
+      if(mouseX>460 && mouseX<540) {
+        if (layerSelected==1){
+          layer1.setShape(0);
+        }
+        if (layerSelected==2){
+          layer2.setShape(0);
+        }
+        if (layerSelected==3){
+          layer3.setShape(0);
+        }
+      }
+      if(mouseX>540 && mouseX<620) {
+        if (layerSelected==1){
+          layer1.setShape(1);
+        }
+        if (layerSelected==2){
+          layer2.setShape(1);
+        }
+        if (layerSelected==3){
+          layer3.setShape(1);
+        }
+      }
+      if(mouseX>620 && mouseX<700) {
+        if (layerSelected==1){
+          layer1.setShape(2);
+        }
+        if (layerSelected==2){
+          layer2.setShape(2);
+        }
+        if (layerSelected==3){
+          layer3.setShape(2);
+        }
       }
     }
   }
@@ -140,6 +179,7 @@ void mouseDragged(){
 
 void mousePressed(){
   if (mouseX>50 && mouseX <1150 && mouseY>50 && mouseY<650){
+    notBroken = true;
     if (layerSelected==1){
       layer1.shapeDragger(toolSelected);
     }
@@ -150,6 +190,7 @@ void mousePressed(){
       layer3.shapeDragger(toolSelected);
     }
   }
+  
 }
 
 void mouseReleased(){
@@ -162,6 +203,18 @@ void mouseReleased(){
     }
     if (layerSelected==3){
       layer3.shapeDragger(toolSelected);
+    }
+    notBroken = false;
+  }
+  else if (notBroken) {
+    if (layerSelected==1){
+      layer1.shapeDragger(-1);
+    }
+    if (layerSelected==2){
+      layer2.shapeDragger(-1);
+    }
+    if (layerSelected==3){
+      layer3.shapeDragger(-1);
     }
   }
   //if(mouseX>10 && mouseX < 210 && mouseY>595 && mouseY < 685){
@@ -228,6 +281,21 @@ void drawToolBar(){
   image(icon3,300,685);
   PImage icon4 = loadImage("filter.png");
   image(icon4,380,685);
+}
+
+void drawShapeMenu(){
+  PImage icon5 = loadImage("line.png");
+  image(icon5,460,685);
+  PImage icon6 = loadImage("circle.png");
+  image(icon6,540,685);
+  PImage icon7 = loadImage("rectangle.png");
+  image(icon7,620,685);
+}
+
+void deleteShapeMenu(){
+  noStroke();
+  fill(99, 99, 99);
+  rect(460,685,240,80);
 }
 
 void drawToolSlider(){

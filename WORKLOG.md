@@ -37,6 +37,10 @@
 -shape only option is drag because more intuitive for user<br />
 -allow brush/erase/shape thickness modification<br />
 
+### 5/31/24
+-shape selector menu !! opens and closes !!<br />
+-fixed bug where the entire shape tool breaks if dragged outside canvas<br />
+
 
 ## GROUP MEMBER 2: Catherine
 
