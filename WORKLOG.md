@@ -69,3 +69,7 @@ added a clear icon
 
 coded the clear icon so that it works <br />
 started on the thickness slider
+
+### 5/31/24
+
+fixed thickness slider
