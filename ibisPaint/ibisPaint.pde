@@ -36,6 +36,7 @@ void mouseClicked() {
     if(mouseY>685){
       if(mouseX>60 && mouseX<140){
         toolSelected = BRUSH;
+        drawToolSlider();
       }
       if(mouseX>140 && mouseX<220){
         toolSelected = ERASER;
@@ -117,6 +118,10 @@ void mouseClicked() {
     stroke(0);
     rect(50,50,1100,600);
   }
+  if(mouseX>10 && mouseX<210 && mouseY>595 && mouseY < 685){
+    curLay.setThickness(mouseX % 20);
+  }
+  
 }
 
 void mouseDragged(){
@@ -159,6 +164,9 @@ void mouseReleased(){
       layer3.shapeDragger(toolSelected);
     }
   }
+  //if(mouseX>10 && mouseX < 210 && mouseY>595 && mouseY < 685){
+  //  rect(mouseX,mouseY,10,10);
+  //}
 }
 
 
@@ -171,7 +179,7 @@ void draw(){
   fill(c);
   text(mouseX, 50, 10);
   text(mouseY, 50, 35);
-  text("color",50,50);
+  text(layer1.getThickness(),50,50);
 }
 
 void drawBackground(){
@@ -220,4 +228,47 @@ void drawToolBar(){
   image(icon3,300,685);
   PImage icon4 = loadImage("filter.png");
   image(icon4,380,685);
+}
+
+void drawToolSlider(){
+  int thicc = 1;
+  stroke(0);
+  fill(190,190,190);
+  rect(10,595,200,90);
+  fill(255, 0, 0);
+  rect(5,590,10,10);
+  strokeWeight(2);
+  line(20,640,200,640);
+  strokeWeight(1);
+  fill(0);
+  textSize(20);
+  text("" + thicc, 20,620);
+  rect(20,635,10,10);
+  thicc++;
+  text("" + thicc, 40,620);
+  rect(40,635,10,10);
+  thicc++;
+  text("" + thicc, 60,620);
+  rect(60,635,10,10);
+  thicc++;
+  text("" + thicc, 80,620);
+  rect(80,635,10,10);
+  thicc++;
+  text("" + thicc, 100,620);
+  rect(100,635,10,10);
+  thicc++;
+  text("" + thicc, 120,620);
+  rect(120,635,10,10);
+  thicc++;
+  text("" + thicc, 140,620);
+  rect(140,635,10,10);
+  thicc++;
+  text("" + thicc, 160,620);
+  rect(160,635,10,10);
+  thicc++;
+  text("" + thicc, 180,620);
+  rect(180,635,10,10);
+  thicc++;
+  text("" + thicc, 190,620);
+  rect(190,635,10,10);
 }

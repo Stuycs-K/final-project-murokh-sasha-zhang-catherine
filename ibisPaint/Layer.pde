@@ -21,6 +21,12 @@ public class Layer {
   public color getColor(){
     return this.colour;
   }
+  public void setThickness(int thicc){
+    thickness = thicc;
+  }
+  public int getThickness(){
+    return thickness;
+  }
   public void paint(int toolSelected) {
     if (toolSelected == BRUSH) {
       Brush brush = new Brush(colour,thickness);

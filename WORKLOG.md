@@ -67,4 +67,5 @@ added a clear icon
 
 ### 5/30/24
 
-coded the clear icon so that it works
+coded the clear icon so that it works <br />
+started on the thickness slider
