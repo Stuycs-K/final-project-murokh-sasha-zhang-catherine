@@ -6,6 +6,7 @@ static int ERASER = 1;
 static int SHAPE1 = 2;
 static int FILTER = 3;
 static int IMAGE1 = 4;
+static boolean notBroken;
 
 void setup(){
   toolSelected = 1;
@@ -178,6 +179,7 @@ void mouseDragged(){
 
 void mousePressed(){
   if (mouseX>50 && mouseX <1150 && mouseY>50 && mouseY<650){
+    notBroken = true;
     if (layerSelected==1){
       layer1.shapeDragger(toolSelected);
     }
@@ -188,6 +190,7 @@ void mousePressed(){
       layer3.shapeDragger(toolSelected);
     }
   }
+  
 }
 
 void mouseReleased(){
@@ -200,6 +203,18 @@ void mouseReleased(){
     }
     if (layerSelected==3){
       layer3.shapeDragger(toolSelected);
+    }
+    notBroken = false;
+  }
+  else if (notBroken) {
+    if (layerSelected==1){
+      layer1.shapeDragger(-1);
+    }
+    if (layerSelected==2){
+      layer2.shapeDragger(-1);
+    }
+    if (layerSelected==3){
+      layer3.shapeDragger(-1);
     }
   }
   //if(mouseX>10 && mouseX < 210 && mouseY>595 && mouseY < 685){
@@ -278,8 +293,9 @@ void drawShapeMenu(){
 }
 
 void deleteShapeMenu(){
+  noStroke();
   fill(99, 99, 99);
-  rect(460,685,700,685);
+  rect(460,685,240,80);
 }
 
 void drawToolSlider(){

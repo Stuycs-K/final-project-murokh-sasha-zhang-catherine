@@ -62,6 +62,10 @@ public class Layer {
         started = !started;
       }
     }
+    if (toolSelected == -1) {
+      started = false;
+      System.out.println("hi");
+    }
   }
   
   public void setShape(int shapeFr){
