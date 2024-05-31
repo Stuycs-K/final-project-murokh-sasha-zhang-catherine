@@ -37,18 +37,23 @@ void mouseClicked() {
       if(mouseX>60 && mouseX<140){
         toolSelected = BRUSH;
         drawToolSlider();
+        deleteShapeMenu();
       }
       if(mouseX>140 && mouseX<220){
         toolSelected = ERASER;
+        deleteShapeMenu();
       }
       if(mouseX>220 && mouseX<300){
         toolSelected = SHAPE1;
+        drawShapeMenu();
       }
       if(mouseX>300 && mouseX<380){
         toolSelected = FILTER;
+        deleteShapeMenu();
       }
       if(mouseX>380 && mouseX<460){
         toolSelected = IMAGE1;
+        deleteShapeMenu();
       }
       if(mouseX>460 && mouseX<540) {
         if (layerSelected==1){
@@ -261,12 +266,20 @@ void drawToolBar(){
   image(icon3,300,685);
   PImage icon4 = loadImage("filter.png");
   image(icon4,380,685);
+}
+
+void drawShapeMenu(){
   PImage icon5 = loadImage("line.png");
   image(icon5,460,685);
   PImage icon6 = loadImage("circle.png");
   image(icon6,540,685);
   PImage icon7 = loadImage("rectangle.png");
   image(icon7,620,685);
+}
+
+void deleteShapeMenu(){
+  fill(99, 99, 99);
+  rect(460,685,700,685);
 }
 
 void drawToolSlider(){
