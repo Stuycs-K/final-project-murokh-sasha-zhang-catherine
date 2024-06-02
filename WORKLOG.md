@@ -77,3 +77,8 @@ started on the thickness slider
 ### 5/31/24
 
 fixed thickness slider
+
+### 6/2/24
+
+fixed thickness slider again, implemented for eraser and shape <br />
+fixed clear icon so that if the brush goes over slightly it still works

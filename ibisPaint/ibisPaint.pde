@@ -37,16 +37,18 @@ void mouseClicked() {
     if(mouseY>685){
       if(mouseX>60 && mouseX<140){
         toolSelected = BRUSH;
-        drawToolSlider();
         deleteShapeMenu();
+        drawToolSlider();
       }
       if(mouseX>140 && mouseX<220){
         toolSelected = ERASER;
         deleteShapeMenu();
+        drawToolSlider();
       }
       if(mouseX>220 && mouseX<300){
         toolSelected = SHAPE1;
         drawShapeMenu();
+        drawShapeToolSlider();
       }
       if(mouseX>300 && mouseX<380){
         toolSelected = FILTER;
@@ -153,12 +155,21 @@ void mouseClicked() {
     }
   }
   if(mouseX>1280 && mouseY<50){
+    strokeWeight(1);
+    fill(200,200,200);
+    rect(0, 0, 1400, 800);
     fill(255);
     stroke(0);
-    rect(50,50,1100,600);
+    drawBackground();
+    drawColourSwatches();
+    drawToolBar();
   }
-  if(mouseX>10 && mouseX<210 && mouseY>595 && mouseY < 685){
-    curLay.setThickness(mouseX % 20);
+  if(mouseX>480 && mouseX<680 && mouseY>712 && mouseY<732 &&
+  (toolSelected == BRUSH || toolSelected == ERASER)){
+    curLay.setThickness(mouseX % 50);
+  }
+  if(mouseX>780 && mouseX<980 && mouseY>712 && mouseY<732 && toolSelected == SHAPE1){
+    curLay.setThickness(mouseX % 50);
   }
   
 }
@@ -225,7 +236,7 @@ void mouseReleased(){
 
 void draw(){
   noStroke();
-  fill(99, 99, 99);
+  fill(120, 120, 120);
   rect(50, 0, 50, 50);
   textSize(15);
   color c = layer1.getColor();
@@ -233,6 +244,29 @@ void draw(){
   text(mouseX, 50, 10);
   text(mouseY, 50, 35);
   text(layer1.getThickness(),50,50);
+  if(mouseX>480 && mouseX<680 && mouseY>712 && mouseY<732 && 
+  (toolSelected == BRUSH || toolSelected == ERASER)){
+    String curTool = "";
+    if(toolSelected == BRUSH){
+      curTool = "brush";
+    }
+    if(toolSelected == ERASER){
+      curTool = "eraser";
+    }
+    fill(99, 99, 99);
+    textSize(20);
+    rect(480,680, 200, 20);
+    fill(0);
+    text(curTool + "Size: " + layer1.getThickness(), 480, 700);
+  }
+  if(mouseX>780 && mouseX<980 && mouseY>712 && mouseY<732 && 
+  toolSelected == SHAPE1){
+    fill(99, 99, 99);
+    textSize(20);
+    rect(780,680, 200, 20);
+    fill(0);
+    text("shapeSize: " + layer1.getThickness(), 780, 700);
+  }
 }
 
 void drawBackground(){
@@ -295,48 +329,21 @@ void drawShapeMenu(){
 void deleteShapeMenu(){
   noStroke();
   fill(99, 99, 99);
-  rect(460,685,240,80);
+  rect(460,685,540,80);
 }
 
 void drawToolSlider(){
-  int thicc = 1;
   stroke(0);
   fill(190,190,190);
-  rect(10,595,200,90);
-  fill(255, 0, 0);
-  rect(5,590,10,10);
+  rect(480,700,200,45);
   strokeWeight(2);
-  line(20,640,200,640);
-  strokeWeight(1);
-  fill(0);
-  textSize(20);
-  text("" + thicc, 20,620);
-  rect(20,635,10,10);
-  thicc++;
-  text("" + thicc, 40,620);
-  rect(40,635,10,10);
-  thicc++;
-  text("" + thicc, 60,620);
-  rect(60,635,10,10);
-  thicc++;
-  text("" + thicc, 80,620);
-  rect(80,635,10,10);
-  thicc++;
-  text("" + thicc, 100,620);
-  rect(100,635,10,10);
-  thicc++;
-  text("" + thicc, 120,620);
-  rect(120,635,10,10);
-  thicc++;
-  text("" + thicc, 140,620);
-  rect(140,635,10,10);
-  thicc++;
-  text("" + thicc, 160,620);
-  rect(160,635,10,10);
-  thicc++;
-  text("" + thicc, 180,620);
-  rect(180,635,10,10);
-  thicc++;
-  text("" + thicc, 190,620);
-  rect(190,635,10,10);
+  line(500,722,660,722);
+}
+
+void drawShapeToolSlider(){
+  stroke(0);
+  fill(190,190,190);
+  rect(780,700,200,45);
+  strokeWeight(2);
+  line(800,722,960,722);
 }
