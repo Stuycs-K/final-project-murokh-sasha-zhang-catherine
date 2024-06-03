@@ -41,6 +41,11 @@
 -shape selector menu !! opens and closes !!<br />
 -fixed bug where the entire shape tool breaks if dragged outside canvas<br />
 
+### 6/3/24
+-updated custom icons to match better<br />
+-graphic design is my passion<br />
+-started working on future implementation of layer classes to be toggleable by buttons<br />
+
 
 ## GROUP MEMBER 2: Catherine
 
