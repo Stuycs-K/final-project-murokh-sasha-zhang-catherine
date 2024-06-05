@@ -164,6 +164,7 @@ void mouseClicked() {
     drawColourSwatches();
     drawToolBar();
   }
+  /////THIS IS WHERE SAVE GOES
   if(mouseX>480 && mouseX<680 && mouseY>712 && mouseY<732 &&
   (toolSelected == BRUSH || toolSelected == ERASER)){
     curLay.setThickness(mouseX % 50);
@@ -277,6 +278,9 @@ void drawBackground(){
   PImage clear = loadImage("clear.png");
   clear.resize(80,80);
   image(clear, 1280, -15);
+  PImage save = loadImage("save.png");
+  save.resize(60,60);
+  image(save, 1200, 0);
 }
 
 void drawColourSwatches(){
