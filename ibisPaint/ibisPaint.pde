@@ -284,6 +284,9 @@ void drawBackground(){
 }
 
 void drawColourSwatches(){
+  PImage colorWheel = loadImage("colorWheel.png");
+  colorWheel.resize(60, 60);
+  image(colorWheel, 1285, 128);
   fill(255, 0, 0);
   rect(1220,70,45,38);
   fill(255, 141, 0);
