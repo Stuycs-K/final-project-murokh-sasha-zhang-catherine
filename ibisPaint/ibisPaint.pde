@@ -245,7 +245,7 @@ void draw(){
   text(mouseX, 50, 10);
   text(mouseY, 50, 35);
   text(layer1.getThickness(),50,50);
-  if(mouseX>480 && mouseX<680 && mouseY>712 && mouseY<732 && 
+  if(mouseX>480 && mouseX<680 && mouseY == 722 && 
   (toolSelected == BRUSH || toolSelected == ERASER)){
     String curTool = "";
     if(toolSelected == BRUSH){
@@ -254,14 +254,18 @@ void draw(){
     if(toolSelected == ERASER){
       curTool = "eraser";
     }
+    drawToolSlider();
+    circle(mouseX, mouseY, 5);
     fill(99, 99, 99);
     textSize(20);
     rect(480,680, 200, 20);
     fill(0);
     text(curTool + "Size: " + layer1.getThickness(), 480, 700);
   }
-  if(mouseX>780 && mouseX<980 && mouseY>712 && mouseY<732 && 
+  if(mouseX>780 && mouseX<980 && mouseY==722 && 
   toolSelected == SHAPE1){
+    drawToolSlider();
+    circle(mouseX, mouseY, 5);
     fill(99, 99, 99);
     textSize(20);
     rect(780,680, 200, 20);
