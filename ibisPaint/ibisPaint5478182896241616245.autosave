@@ -1,14 +1,12 @@
 int layerSelected;
 Layer layer1, layer2, layer3;
 int toolSelected;
-int stickerSelected;
 static int BRUSH = 0;
 static int ERASER = 1;
 static int SHAPE1 = 2;
 static int FILTER = 3;
 static int IMAGE1 = 4;
 static boolean notBroken;
-
 
 void setup(){
   toolSelected = 1;
@@ -20,7 +18,6 @@ void setup(){
   drawBackground();
   drawColourSwatches();
   drawToolBar();
-  
 }
 
 void mouseClicked() {
@@ -45,7 +42,6 @@ void mouseClicked() {
       if(mouseX>140 && mouseX<220){
         toolSelected = ERASER;
         deleteShapeMenu();
-        deleteStickerSheet();
         drawToolSlider();
       }
       if(mouseX>220 && mouseX<300){
@@ -54,12 +50,11 @@ void mouseClicked() {
         drawShapeToolSlider();
       }
       if(mouseX>300 && mouseX<380){
-        toolSelected = IMAGE1;
+        toolSelected = FILTER;
         deleteShapeMenu();
-        drawStickerSheet();
       }
       if(mouseX>380 && mouseX<460){
-        toolSelected = FILTER;
+        toolSelected = IMAGE1;
         deleteShapeMenu();
       }
       if(mouseX>460 && mouseX<540) {
@@ -168,7 +163,9 @@ void mouseClicked() {
     drawColourSwatches();
     drawToolBar();
   }
-  /////THIS IS WHERE SAVE GOES
+  if(mouseX<1340 && mouseX>1280 && mouseY<188 && mouseX>128){
+    colorWheelMode();
+  }
   if(mouseX>480 && mouseX<680 && mouseY>712 && mouseY<732 &&
   (toolSelected == BRUSH || toolSelected == ERASER)){
     curLay.setThickness(mouseX % 50);
@@ -176,145 +173,7 @@ void mouseClicked() {
   if(mouseX>780 && mouseX<980 && mouseY>712 && mouseY<732 && toolSelected == SHAPE1){
     curLay.setThickness(mouseX % 50);
   }
-  PImage sticker1 = loadImage("sticker (1).png");
-  PImage sticker2 = loadImage("sticker (2).png");
-  PImage sticker3 = loadImage("sticker (3).png");
-  PImage sticker4 = loadImage("sticker (4).png");
-  PImage sticker5 = loadImage("sticker (5).png");
-  PImage sticker6 = loadImage("sticker (6).png");
-  PImage sticker7 = loadImage("sticker (7).png");
-  PImage sticker8 = loadImage("sticker (8).png");
-  PImage sticker9 = loadImage("sticker (9).png");
-  PImage sticker10 = loadImage("sticker (10).png");
-  if(mouseX>260 && mouseX<300 && mouseY>65 && mouseY<135){
-    stickerSelected = 1;
-    fill(255);
-    rect(500, 685, 150, 80);
-    fill(0);
-    textSize(20);
-    text("selected sticker:", 500, 705);
-    sticker1.resize(70, 70);
-    image(sticker1, 500, 695);
-  }
-  if(mouseX>330 && mouseX<370 && mouseY>65 && mouseY<135){
-    stickerSelected = 2;
-    rect(500, 685, 150, 80);
-    fill(0);
-    textSize(20);
-    text("selected sticker:", 500, 705);
-    sticker2.resize(70, 70);
-    image(sticker2, 500, 695);
-  }
-  if(mouseX>390 && mouseX<430 && mouseY>65 && mouseY<135){
-    stickerSelected = 3;
-    rect(500, 685, 150, 80);
-    fill(0);
-    textSize(20);
-    text("selected sticker:", 500, 705);
-    sticker3.resize(70, 70);
-    image(sticker3, 500, 695);
-  }
-  if(mouseX>260 && mouseX<300 && mouseY>140 && mouseY<215){
-    stickerSelected = 4;
-    rect(500, 685, 150, 80);
-    fill(0);
-    textSize(20);
-    text("selected sticker:", 500, 705);
-    sticker4.resize(70, 70);
-    image(sticker4, 500, 695);
-  }
-  if(mouseX>330 && mouseX<370 && mouseY>140 && mouseY<215){
-    stickerSelected = 5;
-    rect(500, 685, 150, 80);
-    fill(0);
-    textSize(20);
-    text("selected sticker:", 500, 705);
-    sticker5.resize(70, 70);
-    image(sticker5, 500, 695);
-  }
-  if(mouseX>390 && mouseX<430 && mouseY>140 && mouseY<215){
-    stickerSelected = 6;
-    rect(500, 685, 150, 80);
-    fill(0);
-    textSize(20);
-    text("selected sticker:", 500, 705);
-    sticker6.resize(70, 70);
-    image(sticker6, 500, 695);
-  }
-  if(mouseX>250 && mouseX<300 && mouseY>230 && mouseY<260){
-    stickerSelected = 7;
-    rect(500, 685, 150, 80);
-    fill(0);
-    textSize(20);
-    text("selected sticker:", 500, 705);
-    sticker7.resize(70, 70);
-    image(sticker7, 500, 695);
-  }
-  if(mouseX>320 && mouseX<340 && mouseY>230 && mouseY<245){
-    stickerSelected = 8;
-    rect(500, 685, 150, 80);
-    fill(0);
-    textSize(20);
-    text("selected sticker:", 500, 705);
-    sticker8.resize(70, 70);
-    image(sticker8, 500, 695);
-  }
-  if(mouseX>320 && mouseX<340 && mouseY>255 && mouseY<260){
-    stickerSelected = 9;
-    rect(500, 685, 150, 80);
-    fill(0);
-    textSize(20);
-    text("selected sticker:", 500, 705);
-    sticker9.resize(70, 70);
-    image(sticker9, 500, 695);
-  }
-  if(mouseX>350 && mouseX<370 && mouseY>230 && mouseY<235){
-    stickerSelected = 10;
-    rect(500, 685, 150, 80);
-    fill(0);
-    textSize(20);
-    text("selected sticker:", 500, 705);
-    sticker10.resize(70, 70);
-    image(sticker10, 500, 685);
-  }
-  if(toolSelected == IMAGE1){
-    fill(0);
-    textSize(20);
-    text("selected sticker:" + stickerSelected, 500, 705);
-    if(stickerSelected == 1){
-      image(sticker1, mouseX, mouseY);
-    }
-    if(stickerSelected == 2){
-      image(sticker2, mouseX, mouseY);
-    }
-    if(stickerSelected == 3){
-      image(sticker3, mouseX, mouseY);
-    }
-    if(stickerSelected == 4){
-      image(sticker4, mouseX, mouseY);
-    }
-    if(stickerSelected == 5){
-      image(sticker5, mouseX, mouseY);
-    }
-    if(stickerSelected == 6){
-      image(sticker6, mouseX, mouseY);
-    }
-    if(stickerSelected == 7){
-      image(sticker7, mouseX, mouseY);
-    }
-    if(stickerSelected == 8){
-      image(sticker8, mouseX, mouseY);
-    }
-    if(stickerSelected == 9){
-      image(sticker9, mouseX, mouseY);
-    }
-    if(stickerSelected == 10){
-      image(sticker10, mouseX, mouseY);
-    }
-  }
-  if(mouseX>250 && mouseX<260 && mouseY>51 && mouseY<61 && toolSelected == IMAGE1){
-    deleteStickerSheet();
-  }
+  
 }
 
 void mouseDragged(){
@@ -387,7 +246,7 @@ void draw(){
   text(mouseX, 50, 10);
   text(mouseY, 50, 35);
   text(layer1.getThickness(),50,50);
-  if(mouseX>480 && mouseX<680 && mouseY == 722 && 
+  if(mouseX>480 && mouseX<680 && mouseY==722 && 
   (toolSelected == BRUSH || toolSelected == ERASER)){
     String curTool = "";
     if(toolSelected == BRUSH){
@@ -404,10 +263,8 @@ void draw(){
     fill(0);
     text(curTool + "Size: " + layer1.getThickness(), 480, 700);
   }
-  if(mouseX>780 && mouseX<980 && mouseY==722 && 
+  if(mouseX>780 && mouseX<980 && mouseY==712 && 
   toolSelected == SHAPE1){
-    drawToolSlider();
-    circle(mouseX, mouseY, 5);
     fill(99, 99, 99);
     textSize(20);
     rect(780,680, 200, 20);
@@ -424,15 +281,12 @@ void drawBackground(){
   PImage clear = loadImage("clear.png");
   clear.resize(80,80);
   image(clear, 1280, -15);
-  PImage save = loadImage("save.png");
-  save.resize(60,60);
-  image(save, 1200, 0);
 }
 
 void drawColourSwatches(){
   PImage colorWheel = loadImage("colorWheel.png");
   colorWheel.resize(60, 60);
-  image(colorWheel, 1285, 128);
+  image(colorWheel, 1280, 128);
   fill(255, 0, 0);
   rect(1220,70,45,38);
   fill(255, 141, 0);
@@ -500,20 +354,8 @@ void drawShapeToolSlider(){
   strokeWeight(2);
   line(800,722,960,722);
 }
-
-void drawStickerSheet(){
-  PImage stickerSheet = loadImage("stickerSheet.png");
-  image(stickerSheet, 250, 51);
-  fill(255);
-  rect(500, 685, 150, 80);
-  fill(0);
-  textSize(20);
-  text("selected sticker:", 500, 705);
-  fill(255, 0, 0);
-  rect(250, 51, 10, 10);
-}
-void deleteStickerSheet(){
-  noStroke();
-  fill(255);
-  rect(250,51,420, 594);
+void colorWheelMode(){
+  PImage colorWheel = loadImage("colorWheel.png");
+  colorWheel.resize(100,100);
+  image(colorWheel, 1220, 70);
 }
