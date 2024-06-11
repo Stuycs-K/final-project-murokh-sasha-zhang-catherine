@@ -11,6 +11,8 @@ We are planning to make a clone of the drawing software ibisPaintX. The app itse
 The project is run the standard way.
 As seen on the interface, simply click the buttons and drag the mouse around in the canvas, the slider is beside the tools and the colors are on the right. Drag to activate the current brush and draw. For image, click on the sticker on the pop-up sheet and click again to see your sticker.
 For fliter, click the icon. If you want to clear the screen, press the clear icon. If you want to save the screen, press the button next to it.
+## Presentation
+https://drive.google.com/file/d/1u_gVSp0krosfzbOE_bha-aGKrfg_HZgI/view?usp=sharing
 ## Bugs
 The color wheel does nothing, and most of the stickers are useless as well.
 
