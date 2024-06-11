@@ -37,6 +37,11 @@ public class Layer {
       Erase erase = new Erase(thickness);
       erase.clicks();
     }
+    if (toolSelected == FILTER) {
+      
+      Filter filter1 = new Filter();
+      filter1.setFilter();
+    }
   }
   public void dragged(int toolSelected) {
     if (toolSelected == BRUSH) {

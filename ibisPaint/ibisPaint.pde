@@ -51,11 +51,11 @@ void mouseClicked() {
         drawShapeToolSlider();
       }
       if(mouseX>300 && mouseX<380){
-        toolSelected = FILTER;
+        toolSelected = IMAGE1;
         deleteShapeMenu();
       }
       if(mouseX>380 && mouseX<460){
-        toolSelected = IMAGE1;
+        toolSelected = FILTER;
         deleteShapeMenu();
       }
       if(mouseX>460 && mouseX<540) {
