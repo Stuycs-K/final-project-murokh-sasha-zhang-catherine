@@ -15,4 +15,5 @@ For fliter, click the icon. If you want to clear the screen, press the clear ico
 https://drive.google.com/file/d/1u_gVSp0krosfzbOE_bha-aGKrfg_HZgI/view?usp=sharing
 ## Bugs
 The color wheel does nothing, and most of the stickers are useless as well.
+The sticker are offset because the screenshot of the stickers where rectangular, and load image takes the top right corner.
 
